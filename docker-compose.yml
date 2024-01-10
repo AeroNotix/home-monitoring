@@ -124,6 +124,8 @@ services:
     privileged: true
     ports:
       - "9902:9902"
+    networks:
+      - monitoring
     restart: unless-stopped
 
 volumes:
