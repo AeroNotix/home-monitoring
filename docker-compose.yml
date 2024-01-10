@@ -87,6 +87,16 @@ services:
       - monitoring
     restart: always
 
+  telegraf:
+    image: docker.io/telegraf:latest
+    container_name: telegraf
+    ports:
+      - 9273:9273
+    volumes:
+      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    networks:
+      - monitoring
+
 volumes:
   vmagentdata: {}
   vmdata: {}
