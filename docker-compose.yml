@@ -119,11 +119,11 @@ services:
     restart: unless-stopped
 
   smartctl-exporter:
-    image: prometheuscommunity/smartctl-exporter
+    image: matusnovak/prometheus-smartctl:latest
+    container_name: smartctl-exporter
     privileged: true
-    user: root
     ports:
-      - "9633:9633"
+      - "9902:9902"
     restart: unless-stopped
 
 volumes:
