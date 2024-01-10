@@ -39,10 +39,6 @@
   "liveNow": false,
   "panels": [
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fmMKqssGk"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -137,10 +133,6 @@
       "pluginVersion": "9.0.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "fmMKqssGk"
-          },
           "exemplar": true,
           "expr": "smartprom_smart_passed",
           "format": "table",
@@ -265,10 +257,6 @@
       "type": "table"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fmMKqssGk"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -494,10 +482,6 @@
       "type": "table"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fmMKqssGk"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -713,10 +697,6 @@
       "type": "table"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fmMKqssGk"
-      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -796,10 +776,6 @@
       "pluginVersion": "8.5.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "fmMKqssGk"
-          },
           "editorMode": "code",
           "exemplar": true,
           "expr": "smartprom_temperature_celsius_raw",
