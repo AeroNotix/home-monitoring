@@ -1,0 +1,10 @@
+groups:
+  - name: vmsingle
+    interval: 30s
+    concurrency: 2
+    rules:
+      - alert: DeadMansSwitch
+        expr: |
+          vector(1)
+        labels:
+          severity: testing
