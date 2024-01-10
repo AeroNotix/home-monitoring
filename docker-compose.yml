@@ -95,6 +95,7 @@ services:
       - 9273:9273
     volumes:
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /var/lib/zfs/zpool_influxdb:/var/libexec/zfs/zpool_influxdb
     networks:
       - monitoring
 
