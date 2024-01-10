@@ -118,6 +118,14 @@ services:
       - monitoring
     restart: unless-stopped
 
+  smartctl-exporter:
+    image: prometheuscommunity/smartctl-exporter
+    privileged: true
+    user: root
+    ports:
+      - "9633:9633"
+    restart: unless-stopped
+
 volumes:
   vmagentdata: {}
   vmdata: {}
