@@ -15,7 +15,7 @@ services:
       - "--remoteWrite.url=http://victoriametrics:8428/api/v1/write"
     networks:
       - monitoring
-    restart: always
+    restart: unless-stopped
 
   victoriametrics:
     container_name: victoriametrics
@@ -38,7 +38,7 @@ services:
       - "--vmalert.proxyURL=http://vmalert:8880"
     networks:
       - monitoring
-    restart: always
+    restart: unless-stopped
 
   vmalert:
     container_name: vmalert
@@ -58,7 +58,7 @@ services:
       - "--rule=/etc/alerts/*.yml"
     networks:
       - monitoring
-    restart: always
+    restart: unless-stopped
 
   alertmanager:
     container_name: alertmanager
@@ -71,7 +71,7 @@ services:
       - 9093:9093
     networks:
       - monitoring
-    restart: always
+    restart: unless-stopped
 
   grafana:
     container_name: grafana
@@ -95,9 +95,10 @@ services:
       - 9273:9273
     volumes:
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
-      - /var/lib/zfs/zpool_influxdb:/var/libexec/zfs/zpool_influxdb
+      - /var/lib/zfs/:/var/libexec/zfs/
     networks:
       - monitoring
+    restart: unless-stopped
 
   node-exporter:
     image: prom/node-exporter:latest
@@ -115,6 +116,7 @@ services:
       - 9100:9100
     networks:
       - monitoring
+    restart: unless-stopped
 
 volumes:
   vmagentdata: {}
