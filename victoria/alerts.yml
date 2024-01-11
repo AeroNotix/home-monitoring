@@ -8,3 +8,8 @@ groups:
           vector(1)
         labels:
           severity: testing
+      - alert: ZFSPoolIsFailing
+        expr: |
+          node_zfs_zpool_state{state="online"} == 1
+        labels:
+          severity: critical
