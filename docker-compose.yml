@@ -72,6 +72,11 @@ services:
     networks:
       - monitoring
     restart: unless-stopped
+    secrets:
+      - smtp_from
+      - smtp_to
+      - smtp_smarthost
+      - smtp_password
 
   grafana:
     container_name: grafana
@@ -123,3 +128,13 @@ volumes:
 
 networks:
   monitoring:
+
+secrets:
+  smtp_from:
+    file: /opt/smtp/from
+  smtp_to:
+    file: /opt/smtp/to
+  smtp_smarthost:
+    file: /opt/smtp/smarthost
+  smtp_password:
+    file: /opt/smtp/password
