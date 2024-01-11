@@ -1,0 +1,9 @@
+[Unit]
+Description=Runs zpool_influxdb
+
+[Timer]
+Unit=zpool_influxdb.service
+OnCalendar=*:0/10
+
+[Install]
+WantedBy=timers.target

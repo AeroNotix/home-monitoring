@@ -1,0 +1,9 @@
+[Unit]
+Description=Runs zpool_influxdb
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/zfs/zpool_influxdb >> /tmp/zpool_influxdb
+
+[Install]
+WantedBy=default.target
