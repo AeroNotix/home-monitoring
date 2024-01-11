@@ -95,7 +95,7 @@ services:
       - 9273:9273
     volumes:
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
-      - /var/lib/zfs/:/usr/libexec/zfs/
+      - /proc:/host/proc:ro
     networks:
       - monitoring
     restart: unless-stopped
