@@ -2,4 +2,10 @@ route:
   receiver: blackhole
 
 receivers:
-  - name: blackhole
+  - name: email
+    email_configs:
+      - to: "$SMTP_EMAIL_TO"
+        from: "$SMTP_EMAIL_FROM"
+        smarthost: "$SMTP_SMART_HOST"
+        auth_username: "$SMTP_USERNAME"
+        auth_password: "$SMTP_PASSWORD"

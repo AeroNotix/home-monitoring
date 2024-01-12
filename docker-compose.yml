@@ -62,7 +62,8 @@ services:
 
   alertmanager:
     container_name: alertmanager
-    image: prom/alertmanager:v0.25.0
+    build:
+      dockerfile: alertmanager/Dockerfile
     volumes:
       - ./alertmanager/alertmanager.yml:/config/alertmanager.yml
     command:
@@ -138,3 +139,5 @@ secrets:
     file: /opt/smtp/smarthost
   smtp_password:
     file: /opt/smtp/password
+  smtp_username:
+    file: /opt/smtp/username
