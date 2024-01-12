@@ -12,4 +12,6 @@ sed "s@\$SMTP_EMAIL_TO@${SMTP_EMAIL_TO}@g" /config/alertmanager.yml | \
     sed "s@\$SMTP_USERNAME@${SMTP_USERNAME}@g" | \
     sed "s@\$SMTP_PASSWORD@${SMTP_PASSWORD}@g" > /tmp/alertmanager.yml
 
+cat /tmp/alertmanager.yml
+
 /bin/alertmanager $@
