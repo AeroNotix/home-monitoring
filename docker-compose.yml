@@ -67,7 +67,7 @@ services:
     volumes:
       - ./alertmanager/alertmanager.yml:/config/alertmanager.yml
     command:
-      - "--config.file=/config/alertmanager.yml"
+      - "--config.file=/tmp/alertmanager.yml"
     ports:
       - 9093:9093
     networks:
