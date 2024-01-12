@@ -131,6 +131,7 @@ volumes:
 networks:
   monitoring:
 
+# Switch to docker secrets
 secrets:
   smtp_from:
     file: /opt/smtp/from
