@@ -6,10 +6,10 @@ export SMTP_SMART_HOST=$(</run/secrets/smtp_smarthost)
 export SMTP_USERNAME=$(</run/secrets/smtp_username)
 export SMTP_PASSWORD=$(</run/secrets/smtp_username)
 
-cat /config/alertmanager.yml | while IFS= read -r line; do
-    echo $line
-done
+sed -i "s@\$SMTP_EMAIL_TO@${SMTP_EMAIL_TO}g" /config/alertmanager
+sed -i "s@\$SMTP_EMAIL_FROM@${SMTP_EMAIL_FROM}g" /config/alertmanager
+sed -i "s@\$SMTP_SMART_HOST@${SMTP_SMART_HOST}g" /config/alertmanager
+sed -i "s@\$SMTP_USERNAME@${SMTP_USERNAME}g" /config/alertmanager
+sed -i "s@\$SMTP_PASSWORD@${SMTP_PASSWORD}g" /config/alertmanager
 
-
-sleep 3600
 /bin/alertmanager $@
