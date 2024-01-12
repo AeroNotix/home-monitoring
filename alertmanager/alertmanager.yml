@@ -1,7 +1,13 @@
 route:
   receiver: blackhole
+  routes:
+    - match:
+        alertname: ZFSPoolIsFailing
+      receiver: email
 
 receivers:
+  - name: blackhole
+
   - name: email
     email_configs:
       - to: "$SMTP_EMAIL_TO"
