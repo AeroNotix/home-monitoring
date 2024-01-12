@@ -77,6 +77,7 @@ services:
       - smtp_from
       - smtp_to
       - smtp_smarthost
+      - smtp_username
       - smtp_password
 
   grafana:
