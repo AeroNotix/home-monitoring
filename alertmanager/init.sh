@@ -14,4 +14,6 @@ sed "s@\$SMTP_EMAIL_TO@${SMTP_EMAIL_TO}@g" /config/alertmanager.yml | \
 
 cat /tmp/alertmanager.yml
 
+sleep 3600
+
 /bin/alertmanager $@
