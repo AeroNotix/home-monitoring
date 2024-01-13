@@ -21,3 +21,7 @@ scrape_configs:
   - job_name: 'smartctl'
     static_configs:
       - targets: ['smartctl-exporter:9902']
+
+  - job_name: 'workstation'
+    static_configs:
+      - targets: ['workstation.local:9100']
