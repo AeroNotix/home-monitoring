@@ -1,5 +1,6 @@
 route:
   receiver: blackhole
+  group_by: ["alertname", "job"]
   routes:
     - match:
         alertname: ZFSPoolIsFailing
