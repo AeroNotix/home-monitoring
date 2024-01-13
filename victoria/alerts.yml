@@ -13,3 +13,8 @@ groups:
           node_zfs_zpool_state{state!="online"} == 1
         labels:
           severity: critical
+      - alert: SystemDUnitFailed
+        expr: |
+          node_systemd_units{state="failed"} > 0
+        labels:
+          severity: warning
