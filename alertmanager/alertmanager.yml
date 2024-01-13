@@ -4,6 +4,9 @@ route:
     - match:
         alertname: ZFSPoolIsFailing
       receiver: email
+    - match:
+        alertname: SystemdUnitFailed
+      receiver: email
 
 receivers:
   - name: blackhole
