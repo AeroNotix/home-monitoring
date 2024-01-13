@@ -7,7 +7,7 @@ route:
     - match:
         alertname: SystemdUnitFailed
       receiver: email
-      repeat: '1h'
+      repeat_interval: '1h'
 
 receivers:
   - name: blackhole
