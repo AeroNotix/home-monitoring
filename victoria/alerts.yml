@@ -15,6 +15,6 @@ groups:
           severity: critical
       - alert: SystemdUnitFailed
         expr: |
-          node_systemd_units{state="failed"} > 0
+          sum(node_systemd_units{state="failed"}) by (job) > 0
         labels:
           severity: warning
