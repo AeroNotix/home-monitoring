@@ -125,6 +125,8 @@ services:
     ports:
       - 9633:9633
     restart: unless-stopped
+    networks:
+      - monitoring
 
 volumes:
   vmagentdata: {}
