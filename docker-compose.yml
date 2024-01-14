@@ -115,16 +115,6 @@ services:
       - monitoring
     restart: unless-stopped
 
-  smartctl-exporter:
-    image: matusnovak/prometheus-smartctl:latest
-    container_name: smartctl-exporter
-    privileged: true
-    ports:
-      - "9902:9902"
-    networks:
-      - monitoring
-    restart: unless-stopped
-
 volumes:
   vmagentdata: {}
   vmdata: {}
