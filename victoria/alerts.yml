@@ -21,7 +21,7 @@ groups:
       - alert: ToastyHardDisks
         expr: |
           smartctl_device{form_factor="3.5 inches"} * on (instance, device)
-          group_left () smartctl_device_temperature > 30
+          group_left () smartctl_device_temperature > 50
         labels:
           toasty: true
           severity: warning
