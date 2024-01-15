@@ -120,6 +120,8 @@ services:
 
   smartctl-exporter:
     image: prometheuscommunity/smartctl-exporter
+    command:
+      - '--smartctl.interval=30m'
     privileged: true
     user: root
     ports:
