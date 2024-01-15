@@ -119,6 +119,7 @@ services:
     restart: unless-stopped
 
   smartctl-exporter:
+    container_name: 'smartctl-exporter'
     image: prometheuscommunity/smartctl-exporter
     command:
       - '--smartctl.interval=30m'
