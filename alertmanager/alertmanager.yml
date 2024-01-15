@@ -9,6 +9,14 @@ route:
         alertname: SystemdUnitFailed
       receiver: email
       repeat_interval: '1h'
+    - match:
+        alertname: ToastyHardDisks
+      receiver: email
+      repeat_interval: '1h'
+    - match:
+        alertname: BurntHardDisks
+      receiver: email
+      repeat_interval: '1h'
 
 receivers:
   - name: blackhole

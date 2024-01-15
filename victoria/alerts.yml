@@ -18,3 +18,17 @@ groups:
           sum(node_systemd_units{state="failed"}) by (job) > 0
         labels:
           severity: warning
+      - alert: ToastyHardDisks
+        expr: |
+          smartctl_device{form_factor="3.5 inches"} * on (instance, device)
+          group_left () smartctl_device_temperature > 30
+        labels:
+          toasty: true
+          severity: warning
+      - alert: BurntHardDisks
+        expr: |
+          smartctl_device{form_factor="3.5 inches"} * on (instance, device)
+          group_left () smartctl_device_temperature > 60
+        labels:
+          toasty: overly-so
+          severity: warning
