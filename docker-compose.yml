@@ -74,6 +74,8 @@ services:
       - ./alertmanager/alertmanager.yml:/config/alertmanager.yml
     command:
       - "--config.file=/tmp/alertmanager.yml"
+      - "--log.level=error"
+      - "--data.maintenance-interval=12h"
     ports:
       - 9093:9093
     networks:
