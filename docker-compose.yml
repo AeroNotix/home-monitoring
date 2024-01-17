@@ -96,7 +96,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./grafana/grafana.ini:/etc/grafana.ini
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
       - grafanadata:/var/lib/grafana
       - ./grafana/provisioning/:/etc/grafana/provisioning/
       - ./grafana/dashboards/:/var/lib/grafana/dashboards/
