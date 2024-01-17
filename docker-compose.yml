@@ -38,7 +38,7 @@ services:
       - "--influxListenAddr=:8089"
       # We're not lolscale. We can lose some in-flight data and this
       # saves the disk constantly churning on writing metrics out.
-      - "--inmemoryDataFlushInterval=1h"
+      - "--inmemoryDataFlushInterval=6h"
       - "--vmalert.proxyURL=http://vmalert:8880"
       - "--loggerLevel=PANIC"
     networks:
