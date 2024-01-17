@@ -17,6 +17,10 @@ route:
         alertname: BurntHardDisks
       receiver: email
       repeat_interval: '1h'
+    - match:
+        alertname: ReallocatingSectors
+      receiver: email
+      repeat_interval: '6h'
 
 receivers:
   - name: blackhole
