@@ -34,4 +34,4 @@ groups:
           severity: warning
       - alert: ReallocatingSectors
         expr: |
-          smartctl_device_attribute{attribute_name="Reallocated_Sector_Ct", attribute_value_type="raw"} > 223
+          smartctl_device_attribute{attribute_name="Reallocated_Sector_Ct", attribute_value_type="raw"} > 230
